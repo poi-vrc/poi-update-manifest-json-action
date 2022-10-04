@@ -1,0 +1,15 @@
+name: 'poi-check-manifest-action'
+description: 'poi-check-manifest-action'
+author: 'poi-vrc'
+inputs:
+  version-text-file-path:
+    required: true
+    description: 'Version text file path'
+    default: 'version.txt'
+  package-json-file-path:
+    required: true
+    description: 'Package JSON file path'
+    default: 'package.json'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
