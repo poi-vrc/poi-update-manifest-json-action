@@ -1,15 +1,27 @@
-name: 'poi-check-manifest-action'
-description: 'poi-check-manifest-action'
+name: 'poi-update-manifest-json-action'
+description: 'poi-update-manifest-json-action'
 author: 'poi-vrc'
 inputs:
-  version-text-file-path:
+  full-version:
     required: true
-    description: 'Version text file path'
-    default: 'version.txt'
-  package-json-file-path:
+    description: 'Full version to add to/update the manifest'
+    default: ''
+  manifest-file-path:
+    required: false
+    description: 'The manifest JSON file path'
+    default: 'updater_manifest.json'
+  updated-at-time:
+    required: false
+    description: 'Updated at ISO time. Leave blank to automatically generate.'
+    default: ''
+  release-github-url:
+    required: false
+    description: 'Github URL to release. Leave blank to automatically generate.'
+    default: ''
+  release-booth-url:
     required: true
-    description: 'Package JSON file path'
-    default: 'package.json'
+    description: 'Booth URL to release'
+    default: ''
 runs:
   using: 'node16'
   main: 'dist/index.js'
